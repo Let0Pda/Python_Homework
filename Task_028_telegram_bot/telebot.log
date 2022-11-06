@@ -1,0 +1,43 @@
+2022-11-06 21:41:01,113 - asyncio - DEBUG - Using proactor: IocpProactor
+2022-11-06 21:41:01,125 - telegram._bot - DEBUG - Entering: get_me
+2022-11-06 21:41:01,395 - httpx._client - DEBUG - HTTP Request: POST https://api.telegram.org/bot5662550012:AAF5LNoZA3tQkMjsgBiH33IVmFfXP4BhwFU/getMe "HTTP/1.1 200 OK"
+2022-11-06 21:41:01,396 - telegram._bot - DEBUG - {'is_bot': True, 'can_read_all_group_messages': False, 'username': 'vidll_python_bot', 'first_name': 'Vidll_python_bot', 'can_join_groups': True, 'supports_inline_queries': False, 'id': 5662550012}
+2022-11-06 21:41:01,396 - telegram._bot - DEBUG - Exiting: get_me
+2022-11-06 21:41:01,396 - telegram._bot - DEBUG - This Bot is already initialized.
+2022-11-06 21:41:01,396 - telegram.ext._updater - DEBUG - Updater started (polling)
+2022-11-06 21:41:01,397 - telegram.ext._updater - DEBUG - Start network loop retry bootstrap del webhook
+2022-11-06 21:41:01,397 - telegram.ext._updater - DEBUG - Deleting webhook
+2022-11-06 21:41:01,397 - telegram._bot - DEBUG - Entering: delete_webhook
+2022-11-06 21:41:01,449 - httpx._client - DEBUG - HTTP Request: POST https://api.telegram.org/bot5662550012:AAF5LNoZA3tQkMjsgBiH33IVmFfXP4BhwFU/deleteWebhook "HTTP/1.1 200 OK"
+2022-11-06 21:41:01,450 - telegram._bot - DEBUG - True
+2022-11-06 21:41:01,450 - telegram._bot - DEBUG - Exiting: delete_webhook
+2022-11-06 21:41:01,450 - telegram.ext._updater - DEBUG - Bootstrap done
+2022-11-06 21:41:01,450 - telegram.ext._updater - DEBUG - Waiting for polling to start
+2022-11-06 21:41:01,450 - telegram.ext._updater - DEBUG - Polling updates from Telegram started
+2022-11-06 21:41:01,450 - telegram.ext._updater - DEBUG - Start network loop retry getting Updates
+2022-11-06 21:41:01,450 - telegram._bot - DEBUG - Entering: get_updates
+2022-11-06 21:41:01,452 - apscheduler.scheduler - INFO - Scheduler started
+2022-11-06 21:41:01,452 - telegram.ext._application - DEBUG - JobQueue started
+2022-11-06 21:41:01,452 - telegram.ext._application - INFO - Application started
+2022-11-06 21:41:01,452 - apscheduler.scheduler - DEBUG - Looking for jobs to run
+2022-11-06 21:41:01,452 - apscheduler.scheduler - DEBUG - No jobs; waiting until a job is added
+2022-11-06 21:41:11,626 - httpx._client - DEBUG - HTTP Request: POST https://api.telegram.org/bot5662550012:AAF5LNoZA3tQkMjsgBiH33IVmFfXP4BhwFU/getUpdates "HTTP/1.1 200 OK"
+2022-11-06 21:41:11,627 - telegram._bot - DEBUG - No new updates found.
+2022-11-06 21:41:11,627 - telegram._bot - DEBUG - []
+2022-11-06 21:41:11,627 - telegram._bot - DEBUG - Exiting: get_updates
+2022-11-06 21:41:11,627 - telegram._bot - DEBUG - Entering: get_updates
+2022-11-06 21:41:14,237 - telegram.ext._updater - DEBUG - Stopping Updater
+2022-11-06 21:41:14,237 - telegram.ext._updater - DEBUG - Waiting background polling task to finish up.
+2022-11-06 21:41:14,238 - telegram.ext._updater - DEBUG - Network loop retry getting Updates was cancelled
+2022-11-06 21:41:14,238 - telegram.ext._updater - DEBUG - Updater.stop() is complete
+2022-11-06 21:41:14,238 - telegram.ext._application - INFO - Application is stopping. This might take a moment.
+2022-11-06 21:41:14,238 - telegram.ext._application - DEBUG - Waiting for update_queue to join
+2022-11-06 21:41:14,238 - telegram.ext._application - DEBUG - Dropping pending updates
+2022-11-06 21:41:14,238 - telegram.ext._application - DEBUG - Application stopped fetching of updates.
+2022-11-06 21:41:14,238 - telegram.ext._application - DEBUG - Waiting for running jobs to finish
+2022-11-06 21:41:14,238 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2022-11-06 21:41:14,238 - telegram.ext._application - DEBUG - JobQueue stopped
+2022-11-06 21:41:14,238 - telegram.ext._application - DEBUG - Waiting for `create_task` calls to be processed
+2022-11-06 21:41:14,238 - telegram.ext._application - INFO - Application.stop() complete
+2022-11-06 21:41:14,238 - telegram._bot - DEBUG - This Bot is already shut down. Returning.
+2022-11-06 21:41:14,239 - telegram.ext._updater - DEBUG - Shut down of Updater complete
