@@ -1,0 +1,10 @@
+2022-11-06 22:08:42,227 - apscheduler.scheduler - INFO - Scheduler started
+2022-11-06 22:08:42,228 - telegram.ext._application - INFO - Application started
+2022-11-06 22:08:55,716 - telegram.ext._application - INFO - Application is stopping. This might take a moment.
+2022-11-06 22:08:55,716 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2022-11-06 22:08:55,716 - telegram.ext._application - INFO - Application.stop() complete
+2022-11-06 22:09:17,671 - apscheduler.scheduler - INFO - Scheduler started
+2022-11-06 22:09:17,671 - telegram.ext._application - INFO - Application started
+2022-11-06 22:09:56,736 - telegram.ext._application - INFO - Application is stopping. This might take a moment.
+2022-11-06 22:09:56,736 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2022-11-06 22:09:56,737 - telegram.ext._application - INFO - Application.stop() complete
