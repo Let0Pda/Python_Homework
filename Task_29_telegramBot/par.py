@@ -21,5 +21,6 @@ message = 'Хорошая погода'
 question = 'быть или не быть'
 santim = request_sentiment(message)
 print(f'\n{santim}\n')
-resalt = ask_wikipedia_question(question)
-print(resalt)
+print(type(santim))
+# resalt = ask_wikipedia_question(question)
+# print(resalt)
