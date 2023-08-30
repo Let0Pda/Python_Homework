@@ -11,13 +11,12 @@ source_list = [2, 3, 4, 5, 6]
 
 # вариант 1
 counting_pairs1 = 0
-if len(source_list) % 2 != 0:
-    counting_pairs1 = len(source_list)//2 + 1
-else:
-    counting_pairs1 = len(source_list)//2
-new_list1 = []
-for i in range(counting_pairs1):
-    new_list1.append(source_list[i]*source_list[-i-1])
+counting_pairs1 = (
+    len(source_list) // 2 + 1
+    if len(source_list) % 2 != 0
+    else len(source_list) // 2
+)
+new_list1 = [source_list[i]*source_list[-i-1] for i in range(counting_pairs1)]
 print(f'Вариант 1: {source_list} = > {new_list1}')
 
 # вариант 2, можно сократить

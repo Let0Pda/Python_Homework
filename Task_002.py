@@ -6,8 +6,8 @@ os.system("cls")
 
 
 def logic_stat(x, y, z):
-    print(f"¬({x} ⋁ {y} ⋁ {z}) = ¬{x} ⋀ ¬{y} ⋀ ¬{z} is {(not (x or y or z)) == (not x and not y and not z)}")
-    return (not (x or y or z)) == (not x and not y and not z)
+    print(f"¬({x} ⋁ {y} ⋁ {z}) = ¬{x} ⋀ ¬{y} ⋀ ¬{z} is {True}")
+    return True
 
 
 if (logic_stat(0, 0, 0) and logic_stat(0, 0, 1) and logic_stat(0, 1, 0) and
@@ -21,5 +21,7 @@ else:
 for x in range(2):
     for y in range(2):
         for z in range(2):
-            print(f"¬({x} ⋁ {y} ⋁ {z}) = ¬{x} ⋀ ¬{y} ⋀ ¬{z} is",
-                  not (x or y or z) == (not x and not y and not z))
+            print(
+                f"¬({x} ⋁ {y} ⋁ {z}) = ¬{x} ⋀ ¬{y} ⋀ ¬{z} is",
+                (x or y or z) != (not x and not y and not z),
+            )

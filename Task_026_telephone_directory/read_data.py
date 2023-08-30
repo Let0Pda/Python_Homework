@@ -6,8 +6,7 @@ import controller
 
 
 def read_data(file):
-    valid = exists(file)
-    if valid:
+    if valid := exists(file):
         with open(file,  encoding='utf-8') as file:
             data = []
             reader = csv.reader(file, delimiter=";")

@@ -74,8 +74,7 @@ def change_file(data, keys, file):
 
 
 def read_data(file):
-    valid = exists(file)
-    if valid:
+    if valid := exists(file):
         with open(file,  encoding='utf-8', newline='') as file:
             data = []
             reader = csv.DictReader(file, delimiter=';')
@@ -107,20 +106,15 @@ def print_data(data, keys, ch, indent=1, max_width=120):
             [len_el.append(len(el)) for el in col]
             max_columns.append(max(len_el))
 
-        max_columns_title = []
-        for col in zip(*keys):
-            max_columns_title.append(max([len(el) for el in col]))
-
+        max_columns_title = [max(len(el) for el in col) for col in zip(*keys)]
         for col in keys:
             width = []
             for n, c in enumerate(col):
                 if max_columns[n] >= max_columns_title[n]:
                     w = max_columns[n] + indent
-                    width.append(w)
                 else:
                     w = max_columns_title[n] + indent
-                    width.append(w)
-
+                width.append(w)
                 if sum(width) <= max_width:
                     print(f'{c:<{w}}', end='')
                 else:

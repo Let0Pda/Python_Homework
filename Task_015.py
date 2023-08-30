@@ -16,7 +16,7 @@ os.system("cls")
 def fibonacci(n):
     first, second = 0, 1
     fibonacci_num = 0
-    for i in range(n):
+    for _ in range(n):
         fibonacci_num = first + second
         second = first
         first = fibonacci_num
@@ -30,7 +30,7 @@ def negative_fibonacci(n):
         return -1
     else:
         num1, num2 = 1, -1
-        for i in range(2, n):
+        for _ in range(2, n):
             num1, num2 = num2, num1 - num2
         return num2
 

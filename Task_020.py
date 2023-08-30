@@ -16,7 +16,7 @@ def checking_input(n):
 def polinomial(k):
     result = ''
     for i in range(k, 0, -1):
-        meaning = '*x^' + str(i)
+        meaning = f'*x^{str(i)}'
         result += (str(randint(0, 100)) + meaning + ' + ')
     k = result + str(randint(0, 100)) + '= 0'
     return (k)
@@ -43,23 +43,20 @@ def calc_poly(st):
         if degree_polynomial(st[index]) != -1 and degree_polynomial(st[index]) == deg:
             lst.append(coefficient(st[index]))
             index -= 1
-            deg += 1
         else:
             lst.append(0)
-            deg += 1
-
+        deg += 1
     return lst
 
 
 def degree_polynomial(k):
     if 'x^' in k:
         i = k.find('^')
-        meaning = int(k[i+1:])
+        return int(k[i+1:])
     elif ('x' in k) and ('^' not in k):
-        meaning = 1
+        return 1
     else:
-        meaning = -1
-    return meaning
+        return -1
 
 
 def coefficient(k):
@@ -86,7 +83,7 @@ def create_res(sp):
                     result += ' + '
             elif i == len(new_list) - 1 and new_list[i] != 0:
                 result += f'{new_list[i]} = 0'
-            elif i == len(new_list) - 1 and new_list[i] == 0:
+            elif i == len(new_list) - 1:
                 result += ' = 0'
     return result
 
@@ -107,18 +104,14 @@ print(f"Первый многочлен {file1}")
 print(f"Второй многочлен {file2}")
 lst1 = calc_poly(file1)
 lst2 = calc_poly(file2)
-ll = len(lst1)
-if len(lst1) > len(lst2):
-    ll = len(lst2)
+ll = min(len(lst1), len(lst2))
 lst_new = [lst1[i] + lst2[i] for i in range(ll)]
 if len(lst1) > len(lst2):
     mm = len(lst1)
-    for i in range(ll, mm):
-        lst_new.append(lst1[i])
+    lst_new.extend(lst1[i] for i in range(ll, mm))
 else:
     mm = len(lst2)
-    for i in range(ll, mm):
-        lst_new.append(lst2[i])
+    lst_new.extend(lst2[i] for i in range(ll, mm))
 # print(lst_new)
 write_file("task_020_3.txt", create_res(lst_new))
 with open('task_020_3.txt', 'r') as data:

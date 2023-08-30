@@ -12,11 +12,9 @@ def print_data(data):
         for item in data:
             print(item[0].center(20), item[1].center(20),
                   item[2].center(15), item[3].center(30))
-        print(input('\nДля возврата в главное меню нажмите "Ввод"'))
-        os.system("cls")
-        show_menu()
     else:
         print("Справочник пуст!")
-        print(input('\nДля возврата в главное меню нажмите "Ввод"'))
-        os.system("cls")
-        show_menu()
+
+    print(input('\nДля возврата в главное меню нажмите "Ввод"'))
+    os.system("cls")
+    show_menu()

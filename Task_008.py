@@ -9,7 +9,5 @@ n = (input("Введите число n: "))
 while not n.isdigit():
     n = (input("Введите еще раз: "))
 n = int(n)
-solving = []
-for i in range(1, n + 1):
-    solving.append(round((1 + 1/i)**i))
+solving = [round((1 + 1/i)**i) for i in range(1, n + 1)]
 print(f"Полученная сумма последовательности {n}: {solving} -> {sum(solving)}")

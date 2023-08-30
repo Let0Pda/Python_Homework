@@ -6,12 +6,10 @@ from with_data import find_column, find_contact, print_data, read_data, write_js
 
 
 def add_info(file):
-    info = []
     data = read_data(file)
     id_employee = int(len(data[0]) + 1)
-    info.append(id_employee)
     last_name = input('Введите фамилию: ').lower().strip()
-    info.append(last_name)
+    info = [id_employee, last_name]
     first_name = input('Введите имя: ').lower().strip()
     info.append(first_name)
     patronymic = input('Введите очество: ').lower().strip()
@@ -42,8 +40,7 @@ def add_info(file):
 
 
 def new_input():
-    new_in = input("\nПовторить ввод данных? (Yes/No): ")
-    return new_in
+    return input("\nПовторить ввод данных? (Yes/No): ")
 
 
 def greeting():
@@ -66,8 +63,7 @@ def show_menu() -> int:
 
 
 def find_data(file):
-    valid = exists(file)
-    if valid:
+    if valid := exists(file):
         word = input("Введите данные для поиска: ").lower().strip()
         data, keys = read_data(file)
         find_list, ind = find_contact(word, data)
@@ -86,7 +82,7 @@ def find_data(file):
 
 def new_find():
     new_line = new_input()
-    while new_line == 'Yes' or new_line == 'Y' or new_line == 'yes' or new_line == 'y':
+    while new_line in ['Yes', 'Y', 'yes', 'y']:
         return find_data(controller.file)
     else:
         os.system("cls")
@@ -96,12 +92,12 @@ def new_find():
 def export_data(file):
     new_file = input("Введите имя файла: ")
     expansion = input("Введите желаемое расширение (.csv, .txt, .json): ")
-    if expansion == 'csv' or expansion == '.csv':
+    if expansion in ['csv', '.csv']:
         os.system(f'copy {file} {new_file}.csv')
         print(f'Файл {new_file}.csv создан.')
-    elif expansion == 'txt' or expansion == '.txt':
+    elif expansion in ['txt', '.txt']:
         writing_txt(new_file, file)
-    elif expansion == 'json' or expansion == '.json':
+    elif expansion in ['json', '.json']:
         write_json(new_file, file)
 
 
@@ -115,7 +111,7 @@ def delit_employee(data, keys):
         temp = temp.replace('', '').title()
         new_line = input(
             f'\nПодтвертите удаление сотрудника: {temp} ==> Yes/No: ')
-        while new_line == 'Yes' or new_line == 'Y' or new_line == 'yes' or new_line == 'y':
+        while new_line in ['Yes', 'Y', 'yes', 'y']:
             return row, data, keys
         else:
             os.system("cls")
@@ -147,7 +143,7 @@ def change_data(data, keys):
         temp = temp.replace('', '').title()
         new_line = input(
             f'\nПодтвертите изменения данных сотрудника: {temp}\n {keys[0][id_keys]}: {change_column.title()} на {keys[0][id_keys]}: {new_change.title()}\n ==> Yes/No: ').lower().strip()
-        while new_line == 'Yes' or new_line == 'Y' or new_line == 'yes' or new_line == 'y':
+        while new_line in ['Yes', 'Y', 'yes', 'y']:
             data[row][id_keys] = new_change
             return data, keys
         else:

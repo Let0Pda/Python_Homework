@@ -17,7 +17,7 @@ os.system("cls")
 print('\nЗадача 1')
 number = '6782'
 
-lst = list(str(number).split('.'))
+lst = list(number.split('.'))
 summ = 0
 for i in lst:
     for j in i:
@@ -25,7 +25,7 @@ for i in lst:
 print(f"Вариант 1: Сумма цифр вещественного числа равна = {summ}")
 
 # # улучшение
-my_sum = sum(map(int, str(number).replace('.', '')))
+my_sum = sum(map(int, number.replace('.', '')))
 print(f"Вариант 2: Сумма цифр = {my_sum}")
 
 # # улучшение
@@ -40,8 +40,7 @@ n = 4
 
 solving = [1]
 
-for i in range(2, n + 1):
-    solving.append(solving[i - 2] * i)
+solving.extend(solving[i - 2] * i for i in range(2, n + 1))
 print('Вариант 1:', solving)
 
 # стало
@@ -61,13 +60,12 @@ source_list = [2, 3, 4, 5, 6]
 
 # # было
 counting_pairs1 = 0
-if len(source_list) % 2 != 0:
-    counting_pairs1 = len(source_list)//2 + 1
-else:
-    counting_pairs1 = len(source_list)//2
-new_list1 = []
-for i in range(counting_pairs1):
-    new_list1.append(source_list[i]*source_list[-i-1])
+counting_pairs1 = (
+    len(source_list) // 2 + 1
+    if len(source_list) % 2 != 0
+    else len(source_list) // 2
+)
+new_list1 = [source_list[i]*source_list[-i-1] for i in range(counting_pairs1)]
 print(f'Вариант 1: {source_list} = > {new_list1}')
 
 # # стало
@@ -87,11 +85,7 @@ print(f'Вариант 2: {source_list} = > {new_list2}')
 print('\nЗадача 4')
 source_list = [1.1, 1.2, 3.1, 5, 10.01]
 
-# было
-new_list = []
-for i in source_list:
-    if i % 1 != 0:
-        new_list.append(round(i % 1, 2))
+new_list = [round(i % 1, 2) for i in source_list if i % 1 != 0]
 print(f'Вариант 2: {source_list} = > {max(new_list) - min(new_list)}')
 
 # стало

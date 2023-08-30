@@ -9,7 +9,7 @@ os.system("cls")
 
 def write_file(number):
     with open('task_009.txt', 'w') as data:
-        for i in range(number):
+        for _ in range(number):
             data.write(f"{randrange(0, 2*number)}\n")
 
 
@@ -20,7 +20,7 @@ def read_file():
 
 
 n = int(input("Введите число N: "))
-lst_number = [i for i in range(-n, n+1)]
+lst_number = list(range(-n, n+1))
 write_file(n)
 lst_index = read_file()
 prod = 1

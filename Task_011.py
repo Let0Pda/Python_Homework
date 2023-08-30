@@ -6,8 +6,5 @@ import os
 os.system("cls")
 
 list = [2, 3, 5, 9, 3]
-my_summ = 0
-for i in range(len(list)):
-    if i % 2:
-        my_summ += list[i]
+my_summ = sum(list[i] for i in range(len(list)) if i % 2)
 print(f"Сумма равна: {my_summ}")

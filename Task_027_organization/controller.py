@@ -24,7 +24,7 @@ def choice_todo(cn):
         info = add_info(file)
         writing_scv(file, info)
         new_line = new_input()
-        while new_line == 'Yes' or new_line == 'Y' or new_line == 'yes' or new_line == 'y':
+        while new_line in ['Yes', 'Y', 'yes', 'y']:
             return choice_todo(2)
         else:
             os.system("cls")

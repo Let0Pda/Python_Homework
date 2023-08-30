@@ -13,11 +13,7 @@ load_dotenv(find_dotenv())
 
 def bot_quantity():
     global candies
-    if candies > 28:
-        candy = candies % 29
-    else:
-        candy = candies
-    return candy
+    return candies % 29 if candies > 28 else candies
 
 
 async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

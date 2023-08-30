@@ -23,17 +23,16 @@ def quarter(x, y):
 quarter(x, y)
 
 # 2
-if x != 0 and y != 0:
-    if x > 0 and y > 0:
-        print('1 четверть')
-    elif x < 0 and y > 0:
-        print('2 четверть')
-    elif x < 0 and y < 0:
-        print('3 четверть')
-    else:
-        print('4 четверть')
-else:
+if x == 0 or y == 0:
     print('Введите координаты не равные 0!!!')
+elif x > 0 and y > 0:
+    print('1 четверть')
+elif x < 0 and y > 0:
+    print('2 четверть')
+elif x < 0 and y < 0:
+    print('3 четверть')
+else:
+    print('4 четверть')
 # 3
 if x > 0:
     if y > 0:

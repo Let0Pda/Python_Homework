@@ -14,12 +14,11 @@ while not k.isdigit():
 k = int(k)
 result = ''
 for i in range(k, 0, -1):
-    a = '*x^' + str(i)
+    a = f'*x^{str(i)}'
     result += (str(randint(0, 100)) + a + ' + ')
 polinomial = result + str(randint(0, 100)) + '= 0'
-data = open('task_019.txt', 'w')
-data.writelines(polinomial)
-data.close()
+with open('task_019.txt', 'w') as data:
+    data.writelines(polinomial)
 with open('task_019.txt', 'r') as data:  # попробуем with
     print(
         f'Многочлен степени "{k}" = {data.readlines()}')

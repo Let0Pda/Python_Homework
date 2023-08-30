@@ -42,12 +42,11 @@ def candies(k):
 
 def input_bot(name):
     if counter1 == 0 and value % 29 != 0:
-        k = int(value % 29)
-    elif counter1 == 0 and value % 29 == 0:
-        k = 1
+        return int(value % 29)
+    elif counter1 == 0:
+        return 1
     else:
-        k = 29 - includ
-    return k
+        return 29 - includ
 
 
 def motion_print(name, k, counter, value):
@@ -76,8 +75,6 @@ print('\nКоличество конфет на столе:', value)
 flag = randint(0, 2)  # флаг очередности
 if flag:
     print(f'Первый ходит {player1}')
-elif flag and player2 == 'Бот':
-    print(f'Первый ходит {player3}')
 else:
     print(f'Первый ходит {player2}')
 

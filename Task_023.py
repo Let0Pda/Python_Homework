@@ -14,10 +14,14 @@ def draw_board(field):
 def check_win(check):
     win_coord = ((0, 1, 2), (3, 4, 5), (6, 7, 8),
                  (0, 3, 6), (1, 4, 7), (2, 5, 8))
-    for each in win_coord:
-        if check[each[0]] == check[each[1]] == check[each[2]]:
-            return check[each[0]]
-    return False
+    return next(
+        (
+            check[each[0]]
+            for each in win_coord
+            if check[each[0]] == check[each[1]] == check[each[2]]
+        ),
+        False,
+    )
 
 
 def player_input(token):

@@ -26,10 +26,7 @@ def valid_cnt_candy(cnt: int) -> bool:
     :return: True/False
     """
 
-    if MIN_CANDY_STEP <= cnt <= MAX_CANDY_STEP:
-        return True
-    else:
-        return False
+    return MIN_CANDY_STEP <= cnt <= MAX_CANDY_STEP
 
 
 def valid_type_value_cnt_candy(cnt: str) -> bool:
@@ -40,10 +37,7 @@ def valid_type_value_cnt_candy(cnt: str) -> bool:
     :return: True / False
     """
 
-    if cnt.isdigit():
-        return True
-    else:
-        return False
+    return cnt.isdigit()
 
 
 def valid_value_cnt_candy(cnt: int, full_cnt: int, players_candies: dict) -> bool:
@@ -56,10 +50,7 @@ def valid_value_cnt_candy(cnt: int, full_cnt: int, players_candies: dict) -> boo
     :return: True/False
     """
 
-    if (full_cnt - (players_candies[1] + players_candies[2])) < cnt:
-        return False
-    else:
-        return True
+    return full_cnt - (players_candies[1] + players_candies[2]) >= cnt
 
 
 def get_remainder(players_candies: dict, full_cnt: int) -> int:

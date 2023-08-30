@@ -8,9 +8,8 @@ from read_data import read_data
 
 
 def add_info():
-    info = []
     last_name = input('Введите фамилию: ')
-    info.append(last_name)
+    info = [last_name]
     first_name = input('Введите имя: ')
     info.append(first_name)
     phone_number = ''
@@ -29,8 +28,7 @@ def add_info():
 
 
 def new_input():
-    new_in = input("\nПовторить ввод данных? (Yes/No): ")
-    return new_in
+    return input("\nПовторить ввод данных? (Yes/No): ")
 
 
 def greeting():
@@ -50,8 +48,7 @@ def show_menu() -> int:
 
 
 def find_data(file):
-    valid = exists(file)
-    if valid:
+    if valid := exists(file):
         word = input("Введите данные для поиска: ")
         data = read_data(file)
         find_list = find_contact(word, data)
@@ -64,20 +61,14 @@ def find_data(file):
                 for item in find_list:
                     print(item[0].center(20), item[1].center(20),
                           item[2].center(15), item[3].center(30))
-            new_line = new_input()
-            while new_line == 'Yes' or new_line == 'Y' or new_line == 'yes' or new_line == 'y':
-                return find_data(file)
-            else:
-                os.system("cls")
-                return show_menu()
         else:
             print("\nДанные не обнаружены.")
-            new_line = new_input()
-            while new_line == 'Yes' or new_line == 'Y' or new_line == 'yes' or new_line == 'y':
-                return find_data(file)
-            else:
-                os.system("cls")
-                return show_menu()
+        new_line = new_input()
+        while new_line in ['Yes', 'Y', 'yes', 'y']:
+            return find_data(file)
+        else:
+            os.system("cls")
+            return show_menu()
     else:
         print('Справочник еще не создан')
         time.sleep(3)
@@ -89,7 +80,7 @@ def export_data(file):
     info = read_data(file)
     new_file = input("Введите имя файла: ")
     expansion = input("Введите желаемое расширение (.csv, .txt): ")
-    if expansion == 'csv' or expansion == '.csv':
+    if expansion in ['csv', '.csv']:
         os.system(f'copy {file} {new_file}.csv')
-    elif expansion == 'txt' or expansion == '.txt':
+    elif expansion in ['txt', '.txt']:
         writing_txt(new_file, info)

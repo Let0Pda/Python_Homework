@@ -80,13 +80,13 @@ def operatons_rational(update, context):
     rational_two = context.user_data.get('rational_two')
     user_choice = update.message.text
     if user_choice in '+-/*':
-        if user_choice == '+':
-            result = rational_one + rational_two
-        if user_choice == '-':
-            result = rational_one - rational_two
         if user_choice == '*':
             result = rational_one * rational_two
-        if user_choice == '/':
+        elif user_choice == '+':
+            result = rational_one + rational_two
+        elif user_choice == '-':
+            result = rational_one - rational_two
+        elif user_choice == '/':
             try:
                 result = rational_one / rational_two
             except:
@@ -142,13 +142,13 @@ def operatons_complex(update, context):
     complex_two = context.user_data.get('complex_two')
     user_choice = update.message.text
     if user_choice in '+-/*':
-        if user_choice == '+':
-            result = complex_one + complex_two
-        if user_choice == '-':
-            result = complex_one - complex_two
         if user_choice == '*':
             result = complex_one * complex_two
-        if user_choice == '/':
+        elif user_choice == '+':
+            result = complex_one + complex_two
+        elif user_choice == '-':
+            result = complex_one - complex_two
+        elif user_choice == '/':
             try:
                 result = complex_one / complex_two
             except:
